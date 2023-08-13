@@ -1,0 +1,32 @@
+{% extends 'users/base.html' %}
+
+{% block title %}Просмотр комментариев{% endblock title %}
+
+{% block content %}
+
+<br>
+<h2 style="color:whitesmoke">Комментарии оставленные на этой странице ↓</h2>
+
+<div class="table-com table-responsive">
+    <table class="table table-light table-hover border-info align-middle">
+        <caption><a type="button" class="btn btn-outline-light" href="{% url 'komment' %}">Оставьте комментарий!</a></caption>
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Имя пользователя</th>
+                <th scope="col">Текст комментария</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for com in comment %}
+            <tr>
+                <th scope="row">{{com.id}}</th>
+                <td>{{com.nickname}}</td>
+                <td>{{com.text}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+    
+{% endblock content %}

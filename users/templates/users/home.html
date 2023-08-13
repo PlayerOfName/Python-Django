@@ -1,0 +1,14 @@
+{% extends 'users/base.html' %}
+
+{% block title %}Домашняя страница{% endblock title %}
+
+{% block content %}
+    <div class="text">
+        <h2 style="color: whitesmoke;">Добро пожаловать в игровую комнату!</h2>
+    </div>
+    <div class="element-center">
+        <div class="my-bottom">
+            <a href="{% url 'game' %}" type="button" class="button_1">Играть</a>
+        </div>
+    </div>
+{% endblock content %}

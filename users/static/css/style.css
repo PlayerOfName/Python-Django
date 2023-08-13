@@ -1,0 +1,310 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Raleway:400");
+@import url("https://fonts.googleapis.com/css?family=Raleway:400");
+body {
+  background-color: black;
+  font-weight: 400 !important;
+  font-family: "Comfortaa", cursive !important;
+  margin: 0;
+  padding: 0;
+}
+
+.my-form {
+  border: 5px solid #ffd700;
+  border-radius: 15px;
+  color: white;
+  padding: 10px 10px 10px 10px;
+  transform: translateY(30%);
+}
+
+.ofset {
+  margin-bottom: 10px;
+}
+
+.group_1 {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.username_1 {
+  display: inline-block;
+}
+.username_1 p {
+  margin-right: 10px;
+}
+.username_1 p a {
+  text-decoration: none !important;
+  color: #000;
+  font-size: medium;
+  font-weight: 600;
+}
+
+.profile {
+  margin-top: 5px;
+  margin-right: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 90deg;
+  inherits: true;
+}
+@property --gradX {
+  syntax: "<percentage>";
+  initial-value: 50%;
+  inherits: true;
+}
+@property --gradY {
+  syntax: "<percentage>";
+  initial-value: 0%;
+  inherits: true;
+}
+body {
+  font-family: Raleway, sans-serif;
+  text-align: center;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+:root {
+  --d: 2500ms;
+  --angle: 90deg;
+  --gradX: 100%;
+  --gradY: 50%;
+  --c1: rgba(168, 239, 255, 1);
+  --c2: rgba(168, 239, 255, 0.1);
+}
+
+.box {
+  font-size: 17px;
+  border: 5px solid;
+  padding: 12px;
+  -o-border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
+     border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
+  animation: borderRotate var(--d) linear infinite forwards;
+}
+
+.box:nth-child(2) {
+  -o-border-image: radial-gradient(ellipse at var(--gradX) var(--gradY), var(--c1), var(--c1) 10%, var(--c2) 40%) 30;
+     border-image: radial-gradient(ellipse at var(--gradX) var(--gradY), var(--c1), var(--c1) 10%, var(--c2) 40%) 30;
+  animation: borderRadial var(--d) linear infinite forwards;
+}
+
+@keyframes borderRotate {
+  100% {
+    --angle: 420deg;
+  }
+}
+@keyframes borderRadial {
+  20% {
+    --gradX: 100%;
+    --gradY: 50%;
+  }
+  40% {
+    --gradX: 100%;
+    --gradY: 100%;
+  }
+  60% {
+    --gradX: 50%;
+    --gradY: 100%;
+  }
+  80% {
+    --gradX: 0%;
+    --gradY: 50%;
+  }
+  100% {
+    --gradX: 50%;
+    --gradY: 0%;
+  }
+}
+.my-bottom a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-weight: 400;
+}
+.my-bottom a:hover {
+  color: #ffd700;
+}
+
+.button_1 {
+  position: relative;
+  width: 220px;
+  height: 30px;
+  background: linear-gradient(0deg, #000, #272727);
+}
+
+.button_1:before, .button_1:after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000);
+  background-size: 400%;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  z-index: -1;
+  animation: steam 20s linear infinite;
+}
+
+@keyframes steam {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+.button_1:after {
+  filter: blur(50px);
+}
+
+.element-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.nav-item {
+  float: left;
+  padding: 0 6px;
+  background: silver;
+  border: 2px solid #04d9ff;
+  transition: -webkit-clip-path 1s linear;
+  transition: clip-path 1s linear;
+  transition: clip-path 1s linear, -webkit-clip-path 1s linear;
+  -webkit-clip-path: polygon(2px 0, 2px 0, 2px 2px, 100% 2px, 100% 2px, calc(100% - 2px) 2px, calc(100% - 2px) 100%, calc(100% - 2px) 100%, calc(100% - 2px) calc(100% - 2px), 0 calc(100% - 2px), 0 calc(100% - 2px), 2px calc(100% - 2px));
+          clip-path: polygon(2px 0, 2px 0, 2px 2px, 100% 2px, 100% 2px, calc(100% - 2px) 2px, calc(100% - 2px) 100%, calc(100% - 2px) 100%, calc(100% - 2px) calc(100% - 2px), 0 calc(100% - 2px), 0 calc(100% - 2px), 2px calc(100% - 2px));
+}
+
+.nav-item:hover {
+  -webkit-clip-path: polygon(2px 0, 100% 0, 100% 2px, 100% 2px, 100% 100%, calc(100% - 2px) 100%, calc(100% - 2px) 100%, 0 100%, 0 calc(100% - 2px), 0 calc(100% - 2px), 0 0, 2px 0);
+          clip-path: polygon(2px 0, 100% 0, 100% 2px, 100% 2px, 100% 100%, calc(100% - 2px) 100%, calc(100% - 2px) 100%, 0 100%, 0 calc(100% - 2px), 0 calc(100% - 2px), 0 0, 2px 0);
+}
+
+#form_1 {
+  border: 5px solid red;
+  border-radius: 15px;
+}
+
+.form-komments {
+  display: block;
+  background-color: whitesmoke;
+  border: 5px solid none;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.label-kom {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.input-kom {
+  display: inline-block;
+  width: 50%;
+}
+
+.form-label {
+  font-weight: 600;
+}
+
+.textarea-kom {
+  display: inline-block;
+  width: 50%;
+}
+
+.text-main {
+  margin-top: 10px;
+}
+.text-main h2 {
+  color: aliceblue;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 90deg;
+  inherits: true;
+}
+@property --gradX {
+  syntax: "<percentage>";
+  initial-value: 50%;
+  inherits: true;
+}
+@property --gradY {
+  syntax: "<percentage>";
+  initial-value: 0%;
+  inherits: true;
+}
+:root {
+  --d: 2500ms;
+  --angle: 90deg;
+  --gradX: 100%;
+  --gradY: 50%;
+  --c1: rgba(168, 239, 255, 1);
+  --c2: rgba(168, 239, 255, 0.1);
+}
+
+.form-auth {
+  min-width: min(10rem, 100%);
+}
+
+.form_main-auth {
+  font-size: 20px;
+  border: 0.35rem solid;
+  -o-border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
+     border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
+  animation: borderRotate var(--d) linear infinite forwards;
+}
+
+.form_main-auth:nth-child(2) {
+  -o-border-image: radial-gradient(ellipse at var(--gradX) var(--gradY), var(--c1), var(--c1) 10%, var(--c2) 40%) 30;
+     border-image: radial-gradient(ellipse at var(--gradX) var(--gradY), var(--c1), var(--c1) 10%, var(--c2) 40%) 30;
+  animation: borderRadial var(--d) linear infinite forwards;
+}
+
+@keyframes borderRotate {
+  100% {
+    --angle: 420deg;
+  }
+}
+@keyframes borderRadial {
+  20% {
+    --gradX: 100%;
+    --gradY: 50%;
+  }
+  40% {
+    --gradX: 100%;
+    --gradY: 100%;
+  }
+  60% {
+    --gradX: 50%;
+    --gradY: 100%;
+  }
+  80% {
+    --gradX: 0%;
+    --gradY: 50%;
+  }
+  100% {
+    --gradX: 50%;
+    --gradY: 0%;
+  }
+}
+.table-com {
+  margin-top: 100px !important;
+}/*# sourceMappingURL=style.css.map */

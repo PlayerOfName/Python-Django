@@ -1,0 +1,17 @@
+{% extends 'users/base.html' %}
+
+{% block title %}Профиль{% endblock title %}
+{% block content %}
+    <div class="content-section">
+        {% load static %}
+        <div class="media">
+        <img class="rounded-circle account-img" width="100px" style="margin-top: 10px;" src="{% static 'img/defoult.jpg' %}">
+        <div class="media-body">
+            <h2 class="account-heading color-whitesmoke" style="color: whitesmoke;">{{ user.username }}</h2>
+            <p class="text-secondary color-whitesmoke" style="color: whitesmoke !important;">{{ user.email }}</p>
+        </div>
+    </div>
+    <h2 style="color: whitesmoke;">Зарегестрированных пользователей - {{max_id}}</h2>
+        <!-- Здесь будет форма -->
+    </div>
+{% endblock content %}

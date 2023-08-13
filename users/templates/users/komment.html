@@ -1,0 +1,25 @@
+{% extends 'users/base.html' %}
+
+{% block title %}Отзывы{% endblock title %}
+
+{% block content %}
+
+<form method="POST">
+    {% csrf_token %}
+    <div class="form-komments">
+        <div class="md-3">
+            <label for="id_nickname" class="form-label label-kom">Имя пользователя:</label>
+            <input class="form-control ofset input-kom" type="text" name="nickname" placeholder="{{ user.username }}"
+                maxlength="50" required id="id_nickname">
+        </div>
+        <div class="md-3">
+            <label for="id_text" class="form-label label-kom">Текст комментария:</label>
+            <textarea name="text" placeholder="Какой-то текст..." class="form-control textarea-kom"
+                id="exampleFormControlTextarea1" rows="3" cols="40" required id="id_text"></textarea>
+        </div>
+    </div>
+    <input type="submit" class="btn btn-outline-secondary" value="Отправить"
+        style="margin-top: 5px; margin-bottom: 5px;">
+</form>
+
+{% endblock content %}
